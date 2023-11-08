@@ -27,4 +27,3 @@ puts "Original Name (Person 2): #{person2.correct_name}"
 
 capitalize_person2 = CapitalizeDecorator.new(person2)
 puts "Capitalized Name (Person 2): #{capitalize_person2.correct_name}"
-
