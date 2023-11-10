@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/C:/Ruby32-x64/bin/ruby.exe
 require_relative 'app'
 
 def print_menu
