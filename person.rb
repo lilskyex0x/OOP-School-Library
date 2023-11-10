@@ -1,4 +1,6 @@
 require_relative 'nameable'
+require_relative 'book'
+require_relative 'rental'
 
 class Person < Nameable
   attr_accessor :name, :age
@@ -17,8 +19,7 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
-  def rent_book(book_title, book_author, date)
-    book = Book.new(book_title, book_author)
+  def rent_book(book, date)
     rental = Rental.new(date, self, book)
     @rentals << rental
     rental
@@ -30,29 +31,5 @@ class Person < Nameable
 
   def correct_name
     @name
-  end
-
-  class Book
-    attr_accessor :title, :author
-    attr_reader :rentals
-
-    def initialize(title, author)
-      @title = title
-      @author = author
-      @rentals = []
-    end
-  end
-
-  class Rental
-    attr_accessor :date
-    attr_reader :person, :book
-
-    def initialize(date, person, book)
-      @date = date
-      @person = person
-      @book = book
-      person.rentals << self
-      book.rentals << self
-    end
   end
 end
