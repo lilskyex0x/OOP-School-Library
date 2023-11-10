@@ -9,7 +9,7 @@ class Student < Person
   end
 
   def classroom=(classroom)
-    @classroom&.remove_student(self) if @classroom
+    @classroom&.remove_student(self)
     @classroom = classroom
     classroom&.add_student(self)
   end
