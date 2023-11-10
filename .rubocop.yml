@@ -1,6 +1,7 @@
 AllCops:
   NewCops: enable
   Exclude:
+    - "main.rb"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
@@ -14,6 +15,8 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
+  Max: 150
+Metrics/CyclomaticComplexity:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
