@@ -9,11 +9,8 @@ class Student < Person
   end
 
   def classroom=(classroom)
-    return if classroom == @classroom
-
-    @classroom&.remove_student(self)
     @classroom = classroom
-    classroom&.students&.<< self
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 
   def play_hooky
